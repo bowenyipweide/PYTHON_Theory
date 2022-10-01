@@ -17,15 +17,22 @@ with open("my_flie.txt", mode="r/w/a" ) as file:
 
 
 example 
+#Set constant that you decided to change according to the list of names
+PLACEHOLDER = ["name"]
 
-PLACEHOLDER = "[name]"
+./Input/Names/invited_names.txt = ["name_1", "name_2", "name_n"]
 
+#Specific relative file path
 with open("./Input/Names/invited_names.txt") as name_file:
   names = names_file.read()
   
 with open("./Input/Letters/starting_letter.txt") as letter_file: 
   letter_contents = letter_file.read()
   for name in names: 
-    new_letter = letter_conetents.replace(PLACEHOLER, name)
+    stripped_name = name.strip() #remove \n
+    new_letter = letter_conetents.replace(PLACEHOLER, stripper_name)
+    with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", mode="w") as completed_letter:
+      compeleted_letter.write(new_letter)
+      
     
   
