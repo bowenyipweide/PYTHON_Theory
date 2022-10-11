@@ -30,9 +30,11 @@ tuple
 #Dictionary Comprehension
 new_dict = {new_key:new_value for (key,value) in dictionary.items()}
 
-example 
+#example 
 import random
 names = ['alex', 'beth', 'caroline', 'dave']
 students_scores = {student:random.randint(1,100) for student in names}
 #loop entire value of student_scores
 passed_students = {student:score for (student,score) in students_score.items() if score >= 60} 
+
+
