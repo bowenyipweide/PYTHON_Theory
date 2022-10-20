@@ -49,3 +49,28 @@ Str - num_char = len(input("What is your name?"))
 
 Doc String - """ (insert) """ #Comments 
 
+#TKinter 
+4) #Arguments with default values
+def my_functions(a = 1, b = 2, c = 3):
+  #do this with a
+  #then do this with b
+  #finally do this with C
+excute my_function()
+
+#unlimited Arguments 
+default setting been taught:
+def add(n1, n2):
+  return n1 + n2
+
+but if to add more arguments: 
+def add(*args):
+  for n in args:
+    print(n)
+
+then to sum it:
+  *agrs packed all the input number
+def add(*agrs): 
+  sum = 0 
+  for n in args:
+    sum += n
+  return sum
