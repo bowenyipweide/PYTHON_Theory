@@ -57,7 +57,7 @@ def my_functions(a = 1, b = 2, c = 3):
   #finally do this with C
 excute my_function()
 
-#unlimited Arguments 
+#unlimited Arguments output as tuple 
 default setting been taught:
 def add(n1, n2):
   return n1 + n2
@@ -67,10 +67,19 @@ def add(*args):
   for n in args:
     print(n)
 
-then to sum it:
-  *agrs packed all the input number
+#then to sum it:
+  #*agrs packed all the input number
 def add(*agrs): 
   sum = 0 
   for n in args:
     sum += n
   return sum
+
+#Example of **kwargs:
+def calculate (n, **kwargs): 
+  print(kwargs) 
+  n += kwargs["add]
+  n *= kwargs["multiply"]
+  print(n)
+calculate(n, add = 3, multiply = 5)
+               
