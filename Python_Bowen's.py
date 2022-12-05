@@ -3,10 +3,14 @@
 #Loop: {The action of doing something over and over again.}
 
 
+
+
 #Data Types: 
 1) PEMDAS
 2) SYMBOLS
 3) Input Functions
+4) Arguments with default values
+5) Catch exceptions 
 
 1) #Rules PEMDAS priorities
 (P) Parenthesis - (a)
@@ -82,4 +86,9 @@ def calculate (n, **kwargs):
   n *= kwargs["multiply"]
   print(n)
 calculate(n, add = 3, multiply = 5)
-               
+
+5) Catching Exceptions:
+try: (Something that might cause an exception)
+except: (Do this if there was an exception)
+else: (Do this if there were no exceptions)              
+finally: (Do this no matter what happens)
