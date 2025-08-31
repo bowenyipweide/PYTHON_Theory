@@ -101,6 +101,33 @@ class Node:
 				current_node.right = Node(data)
 			else:
 				self._insert(data, current_node.right)
+
+#Sort all data in a list and reconstruct the tree
+def tree_balance(data, first, last):
+	if last >= first:
+		middle = (first + last) // 2
+		root = Node(data[middle])
+		root.left = tree_balance(data, first, middle - 1)
+		root.right =tree_balance(data, middle + 1, last)
+		return root
+	return None
+	
+#Balance factor: Height of left subtree - height of right subtree 
+*Balance factor of each node in an AVL tree can only be -1, 0 or 1*
+class AVLNode:
+	def __init__(self, data):
+		self.data = data
+		self.left = None
+		self.right = None
+		self.height = 0 # New attribute for the height of the node
+	def _get_height(self, node):
+		if not node:
+			return -1
+		return node.height
+	def _get_balance(self, node):
+		if not node:
+			return 0
+		return self._get_height(node.left) - self._get_height(node.right)
 	
 	
 		
