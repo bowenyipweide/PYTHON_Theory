@@ -57,7 +57,7 @@ class Node:
 		left_descendants = self.kth_level_descendants(node.left, k - 1)
 		right_descendants = self.kth_level_descendants(node.left, k - 1)
 
-return left_descendants + right_descendants 
+		return left_descendants + right_descendants 
 		
 #Height of a node in a binary tree 
 #The number of edge on the longest path from the root
@@ -67,5 +67,42 @@ return left_descendants + right_descendants
 		left_height = self.calculate_height(node.left)
 		right_height = self.calculate_height(node.right)
 		return 1 + max(left_height, right_height)
+		
+#Node insertion on a binary tree 
+#First inserted as a root, No rule to insert subsequence node into a binary
+	def insert(self, data):
+		if self.root is None:
+			self.root = Node (data)
+		else:
+			self._insert(data, self.root)
+
+#Binary search tree: searching. [Decrease and conquer approach] divided into two smaller and similar sub-problems, reduce search space.
+#n = 2^k -1 > K = log2(n+1) > k = log2(n+1)
+	def _search(self, data, current_node):
+		if current_node is None:
+			return False
+		elif data == current_node.data:
+			return True
+		elif data < current_node.data:
+			return self._search(data, current_node.left)
+		else: 
+			return self._search(data, current_node.right)
+
+#Binary search Tree(BST): insertion
+#BST remains as BST. duplicate node is not allowed for insertion 
+	def _insert(self, data, current_node):
+		if data < current_node.data:
+			if current_node.left is None:
+				current_node.left = Node(data)
+			else:
+				self._insert(data, current_node.left)
+		else:
+			if current_node.right is None:
+				current_node.right = Node(data)
+			else:
+				self._insert(data, current_node.right)
+	
+		
+
 			
 	
