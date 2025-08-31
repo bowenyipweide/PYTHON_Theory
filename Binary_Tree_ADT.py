@@ -37,5 +37,10 @@ class Node:
 				queue.append(current_node.left)
 			if curren_node.right:
 				queue.append(current_node.right)
+#Count node 
+	def count_node(self, node):
+		if not node: 
+			return 0
+		return 1 + self.count_nodes(node.left) +\ self.count_nodes(node.right) 
 	
 	
