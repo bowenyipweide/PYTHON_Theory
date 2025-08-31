@@ -102,6 +102,7 @@ class Node:
 			else:
 				self._insert(data, current_node.right)
 	
+	
 		
 
 			
