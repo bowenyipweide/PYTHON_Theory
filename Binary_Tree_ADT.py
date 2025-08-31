@@ -6,24 +6,28 @@ class Node:
 		self.data = data 
 		self.left = None
 		self.right = None
+		
 #PRE-Order Depth first traversal
 	def pre_order_traversal(self, node):
 		if node: 
 			print(node.data, end = "")
 			self.pre_order_traversal(node.left)
 			self.pre_order_traversal(node.right)
+			
 #IN-Order Depth first traversal
 	def pre_order_traversal(self, node):
 		if node: 
 			self.pre_order_traversal(node.left)
 			print(node.data, end = "")
 			self.pre_order_traversal(node.right)
+			
 #POST-Order Depth first traversal
 	def pre_order_traversal(self, node):
 		if node: 
 			self.pre_order_traversal(node.left)
 			self.pre_order_traversal(node.right)
 			print(node.data, end = "")
+			
 #Level-by-level Depth first traversal
 #(1)Enqueue current node > (2) Dequeue node > (3) Enqueue children > (4) Repeat step (2) until the queue is empty
 	def level_order_traversal(self):
@@ -37,11 +41,13 @@ class Node:
 				queue.append(current_node.left)
 			if curren_node.right:
 				queue.append(current_node.right)
+				
 #Count node in binary tree
 	def count_node(self, node):
 		if not node: 
 			return 0
 		return 1 + self.count_nodes(node.left) +\ self.count_nodes(node.right) 
+		
 #Find Kth-level descendant nodes
 	def kth_level_descendants(self, node, k):
 		if note is None:
