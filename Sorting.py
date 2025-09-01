@@ -83,4 +83,36 @@ def build_heap_from_list(self, unsorted_list):
 		queue.pop(0)
 		self.build_heap(self.root
 • Time Complexity: O(n)
-		
+
+#Implementation of insert() in a BINARY TREE 
+def insert(self, key):
+	"""Insert a node into the binary heap."""
+	new_node = Node(key)
+	self.size += 1
+if not self.root:
+	self.root = new_node
+	self.last_node = new_node
+	return
+queue = [self.root]
+while queue:
+	current = queue.pop(0)
+	if not current.left:
+		current.left = new_node
+		new_node.parent = current
+		self.last_node = new_node
+		break
+	else:
+		queue.append(current.left)
+	if not current.right:
+		current.right = new_node
+		new_node.parent = current
+		self.last_node = new_node
+		break
+	else:
+		queue.append(current.right)
+	self._heapify_up(self.last_node)
+def _heapify_up(self, node):
+	while node.parent and node.parent.value > node.value:
+# Swap the current node with its parent
+	node.value, node.parent.value = node.parent.value, node.value
+	node = node.parent # Move up to the parent
