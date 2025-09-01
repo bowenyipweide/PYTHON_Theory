@@ -128,6 +128,22 @@ class AVLNode:
 		if not node:
 			return 0
 		return self._get_height(node.left) - self._get_height(node.right)
+	#Right / Left Rotation 
+{left Subtree Left Node;
+Right Subtree Right Node;
+Right Subtree Left Node;
+Left Subtree Right Node}
+	def right_rotate(self, cur):
+		x = cur.left
+		xRChild = x.right
+		# Perform rotation
+		cur.left = xRChild #Step 1
+		x.right = cur #Step 2
+		# Update heights
+		cur.height = 1 + max(self.get_height(cur.left), self.get_height(cur.right))
+		x.height = 1 + max(self.get_height(x.left), self.get_height(x.right))
+		# Return the new root
+		return x
 	
 	
 		
