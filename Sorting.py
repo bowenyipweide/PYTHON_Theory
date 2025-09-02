@@ -116,3 +116,20 @@ def _heapify_up(self, node):
 # Swap the current node with its parent
 	node.value, node.parent.value = node.parent.value, node.value
 	node = node.parent # Move up to the parent
+
+#Implemention of insert() in a LIST
+class BinaryTreeMinHeap:
+	def __init__(self):
+		self.heap = []
+def insert(self, key):
+	"""Inserts a new key into the heap."""
+	self.heap.append(key)
+	self._heapify_up(len(self.heap) - 1)
+def _heapify_up(self, index):
+	"""Restores the heap property by moving a node up."""
+	parent_index = (index - 1) // 2
+	while index > 0 and self.heap[parent_index] > self.heap[index]:
+# Swap the current node with its parent
+		self.heap[index], self.heap[parent_index] = self.heap[parent_index], self.heap[index]
+		index = parent_index
+		parent_index = (index - 1) // 2
