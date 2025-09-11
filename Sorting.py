@@ -17,7 +17,7 @@ class Node:
 		self.value = key
 		self.left = None
 		self.right = None
-		self.parent = None
+		self.parent = None #some funcitons in the class are required to know its parents and the last node
 class BinaryTreeMinHeap:
 	def __init__(self):
 		self.root = None
