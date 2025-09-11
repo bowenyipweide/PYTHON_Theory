@@ -36,7 +36,10 @@ extract_min():
 build_heap():
 	Converts an unsorted list into a valid heap structure
 
-#Build heap
+#Build a heap from a UNSORTED LIST 
+"""1. Insert each element into a binary heap tree via level-by-level traversal"""
+"""2. Use post-order traversal to adjust the binary tree to maintain the heap property
+each subtree is processed before the current node, allowing us to effectively fix any violations of the heap property from the bottom up"""
 def _heapify_down(self, node):
 	while node:
 		smallest = node
