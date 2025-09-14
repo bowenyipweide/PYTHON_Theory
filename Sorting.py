@@ -1,3 +1,9 @@
+"""
+1. Insertion Sort
+2. HEAP Sort
+3. Merge Sort
+4. Quick sort
+5. Radix Sort """
 def insertion_sort(arr):
 	for i in range(1, len(arr)): #pick up an element from arr
 		key = arr[i]
