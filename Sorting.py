@@ -142,3 +142,52 @@ def _heapify_up(self, index):
 		self.heap[index], self.heap[parent_index] = self.heap[parent_index], self.heap[index]
 		index = parent_index
 		parent_index = (index - 1) // 2
+
+"""
+Quick Sort
+1. Pick a pivot element.
+2. Partition the array into two sub-arrays: elements less than pivot and
+elements greater than pivot.
+3. Recursively sort the sub-arrays.
+"""
+
+def quick_sort(arr):
+	if len(arr) <= 1:
+		return arr
+	pivot = arr[(len(arr)-1) //2]
+	left = [x for x in arr if x < pivot]
+	middle = [x for x in arr if x == pivot]
+	right = [x for x in arr if x > pivot]
+	return quick_sort(left) + middle + quick_sort(right
+
+"""
+Radix Sort 
+• Sort numbers by the least significant digit.
+• Sort again by the next digit.
+• Repeat until all digits are sorted.
+"""
+
+def counting_sort(arr, exp):
+	n = len(arr)
+	output = [0] * n
+	count = [0] * 10
+	for i in range(n):
+		index = arr[i] // exp
+		count[index % 10] += 1
+	for i in range(1, 10):
+		count[i] += count[i - 1]
+	i = n - 1
+while i >= 0:
+	index = arr[i] // exp
+	output[count[index % 10] - 1] = arr[i]
+	count[index % 10] -= 1
+	i -= 1
+	for i in range(n):
+		arr[i] = output[i]
+def radix_sort(arr):
+	max1 = max(arr)
+	exp = 1
+	while max1 // exp > 0:
+		counting_sort(arr, exp)
+		exp *= 10
+	return arr												  
