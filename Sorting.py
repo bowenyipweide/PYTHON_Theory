@@ -3,7 +3,9 @@
 2. HEAP Sort
 3. Merge Sort
 4. Quick sort
-5. Radix Sort """
+5. Radix Sort 
+"""
+#Insertion Sort:
 def insertion_sort(arr):
 	for i in range(1, len(arr)): #pick up an element from arr
 		key = arr[i]
@@ -16,8 +18,8 @@ arr = [11, 14, 5, 13, 6]
 insertion_sort(arr)
 print("Sorted array:", arr)
 
-
-#Heap structure
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+#HEAP Sort structure:
 class Node: 
 	def __init__(self,key):
 		self.value = key
